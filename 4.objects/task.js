@@ -1,17 +1,17 @@
 function Student(name, gender, age) {
   this.name = name;
-  this gender = gender;
-  this age = age;
-  this marks = [];
+  this.gender = gender;
+  this.age = age;
+  this.addMarksmarks = [];
 }
 
 Student.prototype.setSubject = function (subjectName) {
   this.subject = subjectName;
-}
+};
 
-Student.prototype.addMarks = function(...marksToAdd) {
+Student.prototype.addMarks = function (...marksToAdd) {
   if (!this.marks) {
-    console.log("Потрачено");
+    console.log('Потрачено');
     return;
   }
 
@@ -25,10 +25,10 @@ Student.prototype.getAverage = function () {
 
   const sum = this.marks.reduce((total, mark) => total + mark, 0);
   return sum / this.marks.length;
-}
+};
 
 Student.prototype.exclude = function (reason) {
   delete this.subject;
   delete this.marks;
   this.excluded = reason;
-}
+};
