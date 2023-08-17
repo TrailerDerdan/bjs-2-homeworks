@@ -1,24 +1,106 @@
 function getArrayParams(...arr) {
+  let min = arr[0];
+  let max = arr[0];
+  let sum = 0;
 
-  return { min: min, max: max, avg: avg };
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] < min) {
+      min = arr[i];
+    }
+
+    if (arr[i] > max) {
+      max = arr[i];
+    }
+
+    sum += arr[i];
+  }
+  let avg = (sum / arr.length).toFixed(2);
+
+  return { min: min, max: max, avg: Number(avg) };
 }
 
-function summElementsWorker(...arr) {
+getArrayParams(-99, 99, 10);
+console.log(getArrayParams(-99, 99, 10));
 
+function summElementsWorker(...arr) {
+  if (arr.length === 0) {
+    return 0;
+  }
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+
+  return sum;
 }
 
 function differenceMaxMinWorker(...arr) {
+  if (arr.length === 0) {
+    return 0;
+  }
+  let min = arr[0];
+  let max = arr[0];
 
+  for (let i = 0; i < arr.length; i++) {
+    min = Math.min(min, arr[i]);
+    max = Math.max(max, arr[i]);
+  }
+
+  let difference = max - min;
+
+  return {
+    min,
+    max,
+    difference,
+  };
 }
 
 function differenceEvenOddWorker(...arr) {
+  if (arr.length === 0) {
+    return 0;
+  }
+  sumEvenElement = 0;
+  sumOddElement = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 === 0) {
+      sumEvenElement += arr[i];
+    } else {
+      sumOddElement += arr[i];
+    }
+  }
 
+  return sumEvenElement - sumOddElement;
 }
 
 function averageEvenElementsWorker(...arr) {
+  if (arr.length === 0) {
+    return 0;
+  }
 
+  sumEvenElement = 0;
+  evenElementLength = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 === 1) {
+      sumEvenElement += arr[i];
+      evenElementLength++;
+    }
+  }
+
+  return sumEvenElement / evenElementLength;
 }
 
-function makeWork (arrOfArr, func) {
+console.log(averageEvenElementsWorker());
 
+function makeWork(arrOfArr, func) {
+  let maxWorkerResult = -Infinity;
+
+  for (let i = 0; i < arrOfArr.length; i++) {
+    const result = func(...arrOfArr[i]);
+
+    if (result > maxWorkerResult) {
+      maxWorkerResult = result;
+    }
+  }
+
+  return maxWorkerResult;
 }
