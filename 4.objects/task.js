@@ -2,14 +2,14 @@ function Student(name, gender, age) {
   this.name = name;
   this.gender = gender;
   this.age = age;
-  this.addMarksmarks = [];
+  this.marks = [];
 }
 
 Student.prototype.setSubject = function (subjectName) {
   this.subject = subjectName;
 };
 
-Student.prototype.addMarks = function (...marksToAdd) {
+Student.prototype.marks = function (...marksToAdd) {
   if (!this.marks) {
     console.log('Потрачено');
     return;
@@ -19,7 +19,7 @@ Student.prototype.addMarks = function (...marksToAdd) {
 };
 
 Student.prototype.getAverage = function () {
-  if (!this.marks) {
+  if (!this.marks || this.marks.length === 0) {
     return 0;
   }
 
