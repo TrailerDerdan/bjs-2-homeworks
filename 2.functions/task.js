@@ -46,12 +46,9 @@ function differenceMaxMinWorker(...arr) {
     max = Math.max(max, arr[i]);
   }
 
-  let difference = max - min;
 
   return {
-    min,
-    max,
-    difference,
+   max - min;
   };
 }
 
@@ -80,7 +77,7 @@ function averageEvenElementsWorker(...arr) {
   sumEvenElement = 0;
   evenElementLength = 0;
   for (let i = 0; i < arr.length; i++) {
-    if (arr[i] % 2 === 1) {
+    if (arr[i] % 2 === 0) {
       sumEvenElement += arr[i];
       evenElementLength++;
     }
