@@ -41,17 +41,11 @@ function differenceMaxMinWorker(...arr) {
   let min = arr[0];
   let max = arr[0];
 
-  // for (let i = 0; i < arr.length; i++) {
-  //   min = Math.min(min, arr[i]);
-  //   max = Math.max(max, arr[i]);
-  // }
   min = Math.min(...arr);
   max = Math.max(...arr);
-  difference = max - min;
-
 
   return {
-    difference
+    max - min;
   }
 }
 
