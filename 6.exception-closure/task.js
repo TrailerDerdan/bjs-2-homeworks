@@ -34,7 +34,7 @@ class Triangle {
   }
   get area() {
     return Math.sqrt(
-        perimeter *
+      perimeter *
         (perimeter - this.side1) *
         (perimeter - this.side2) *
         (perimeter - this.side3)
