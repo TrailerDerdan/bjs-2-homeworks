@@ -113,3 +113,78 @@ class Library {
     return null;
   }
 }
+
+// class Student {
+//   constructor(name) {
+//       this.name = name;
+//       this.marks = {};
+//   }
+
+//   addMark(subject, mark) {
+//       if (mark < 2 || mark > 5) {
+//           console.log("Оценка должна быть от 2 до 5");
+//           return;
+//       }
+
+//       if (!this.marks.hasOwnProperty(subject)) {
+//           this.marks[subject] = [];
+//       }
+
+//       this.marks[subject].push(mark);
+//   }
+//   getAverageBySubject(subject) {
+//     if (!this.marks.hasOwnProperty(subject)) {
+//       return 0;
+//     }
+//     const marks = this.marks[subject];
+//     const sum = marks.reduce((acc, mark) => acc + mark, 0);
+//     return sum / marks.length
+//   }
+//   getAverage() {
+//     const subject = Object.keys(this.marks);
+//     const totalAverage = subject.reduce((acc, subject) => {
+//       return acc + this.getAverageBySubject(subject)
+//     }, 0)
+
+//     return totalAverage / subject.length
+//   }
+// }
+
+class Student {
+  constructor(name) {
+    this.name = name;
+    this.marks = {};
+  }
+
+  addMark(subject, mark) {
+    if (mark < 2 || mark > 5) {
+      console.log('Оценка должна быть от 2 до 5');
+      return;
+    }
+
+    if (!this.marks.hasOwnProperty(subject)) {
+      this.marks[subject] = [];
+    }
+
+    this.marks[subject].push(mark);
+  }
+
+  getAverageBySubject(subject) {
+    if (!this.marks.hasOwnProperty(subject)) {
+      return 0;
+    }
+
+    const marks = this.marks[subject];
+    const sum = marks.reduce((acc, mark) => acc + mark, 0);
+    return sum / marks.length;
+  }
+
+  getAverage() {
+    const subjects = Object.keys(this.marks);
+    const totalAverage = subjects.reduce((acc, subject) => {
+      return acc + this.getAverageBySubject(subject);
+    }, 0);
+
+    return totalAverage / subjects.length;
+  }
+}
