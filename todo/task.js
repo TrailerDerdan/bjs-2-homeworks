@@ -1,15 +1,6 @@
 const tasksInput = document.querySelector('#task__input');
-const tasksAdd = document.querySelector('#tasks__add');
 const tasksList = document.querySelector('#tasks__list');
 const tasksForm = document.querySelector('#tasks__form');
-
-tasksAdd.addEventListener('click', function (event) {
-  event.preventDefault();
-
-  const inputValue = tasksInput.value;
-  createTask(inputValue);
-  tasksInput.value = '';
-});
 
 const createTask = (title) => {
   const taskElement = document.createElement('div');
