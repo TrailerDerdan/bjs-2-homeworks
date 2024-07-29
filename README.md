@@ -1,10 +1,11 @@
-# Домашнее задание к лекции «Изменение структуры HTML-документа»
+# Домашнее задание к лекции «Хранение состояния на клиенте»
 
 Выполните задачи:
 
-1. [Визуальные подсказки.](./tooltip/)
-2. [Простой список дел.](./todo/)
-3. [Корзина товаров.](./cart/)
+1. [Текстовый редактор.](./text-editor)
+2. [Всплывающее один раз окно.](./popup)
+3. [Авторизация.](./auth)
+
 
 Чтобы получить зачёт, выполните все три задачи. Пришлите на проверку все три задачи сразу, не частями.
 
@@ -14,29 +15,21 @@
 
 ## Бонус
 
-У каждого HTML-элемента есть вспомогательные свойства, чтобы работать
-с представлением элемента на странице и прокруткой. Вот они:
+### Cookie
 
-offset
+Несколько детальных статей о cookie:
 
-1. [OffsetLeft.](https://developer.mozilla.org/ru/docs/Web/API/HTMLElement/offsetLeft)
-2. [OffsetTop.](https://developer.mozilla.org/ru/docs/Web/API/HTMLElement/offsetTop)
-3. [OffwetWidth.](https://developer.mozilla.org/ru/docs/Web/API/HTMLElement/offsetWidth)
-4. [OffwetHeight.](https://developer.mozilla.org/ru/docs/Web/API/HTMLElement/offsetHeight)
+1. [Document.cookie.](https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie)
+2. [Куки, document.cookie.](https://learn.javascript.ru/cookie)
 
-scroll
+Посмотрите реализацию функций
+[getCookie(), setCookie(), deleteCookie().](https://gist.github.com/akaramires/7577298)
 
-1. [ScrollLeft.](https://developer.mozilla.org/ru/docs/Web/API/Element/scrollLeft)
-2. [ScrollTop.](https://developer.mozilla.org/ru/docs/Web/API/Element/scrollTop)
-3. [ScrollWidth.](https://developer.mozilla.org/ru/docs/Web/API/Element/scrollWidth)
-4. [ScrollHeight.](https://developer.mozilla.org/ru/docs/Web/API/Element/scrollHeight)
+Эти функции полезны, когда вам нужно работать с несколькими
+cookie-параметрами. Функция *getCookie()* основана на регулярном выражении. Об этом подробнее мы поговорим на следующих курсах.
 
-У объекта *window* есть 4 свойства
+А пока можете почитать несколько статей:
 
-1. [InnerWidth.](https://developer.mozilla.org/en-US/docs/Web/API/Window/innerWidth)
-2. [InnerHeight.](https://developer.mozilla.org/en-US/docs/Web/API/Window/innerHeight)
-3. [OuterWidth.](https://developer.mozilla.org/en-US/docs/Web/API/Window/outerWidth)
-4. [OuterHeight.](https://developer.mozilla.org/en-US/docs/Web/API/Window/outerHeight)
-
-Более подробно об этих свойствах читайте в статье:
-[Координаты в документе.](https://learn.javascript.ru/coordinates-document)
+1. [RegExp.](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
+2. [Методы RegExp и String.](https://learn.javascript.ru/regexp-methods)
+3. [Регулярные выражения для новичков.](https://tproger.ru/articles/regexp-for-beginners/)
